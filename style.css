@@ -5,6 +5,14 @@
     box-sizing: border-box;
 
 }
+ul li{
+    list-style-type: none;
+
+}
+ul li a{
+    text-decoration: none;
+    color: black;
+}
 
 html,
 body {
@@ -749,31 +757,177 @@ padding-bottom: 0.5rem;
         object-fit: cover;
       }
     /* demo page 3 work end*/
-.insta{
-    margin-top: 2rem;
-    width: 100%;
-    height: 30vh;
-    background-color: white;
+.insta-section{
+    display: flex;
+    margin: 8vh 0;
 }
-    .insta-gallary{
-        display: flex;
-        flex-shrink: 0;
-        overflow: hidden;
-        width: 70%;
-        height: 100%;
-        background-color: #111;
+.insta-left{
+    width: 75%;
+    /* height: 25vh; */
+    background-color: #111;
+}
+.insta-right{
+    width: 25%;
+    height: 25.7vh;
+    padding: 2.5rem 2rem ;
+
+    background-color: #acb9fa;
+}
+.insta{
+    overflow: hidden;
+    /* display: flex; */
+    white-space: nowrap;
+}
+.insta:hover .insta-slide{
+    animation-play-state: paused;
+}
+.insta-slide {
+    /* white-space: nowrap; */
+    display: inline-block;
+    /* display: flex; */
+    animation:25s slide infinite linear ;
+}
+.insta-slide img{
+    height: 25vh;
+}
+@keyframes slide {
+    from{
+        transform: translateX(0);
     }
-    .insta-img{
-        height: 100%;
-        width: 20%;
-        background-color: tomato;
+    to{
+        transform: translateX(-100%);
 
     }
+    
+}
+.insta-right p{
+ font-size: 2vw;
+ font-weight: 600;
+}
 
     /* page5 */
 /* Footer */
 footer{
+    /* position: absolute; */
+    /* bottom: 0; */
     width: 100%;
-    height: 30%;
+    /* height: 30%; */
     background-color: #a6fced;
+    border-top-left-radius: 120px;
 }
+.row{
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    padding: 2rem 5rem;
+}
+.col{
+    width: 30%;
+ /* padding: 2rem 5rem; */
+}
+.f-logo{
+    padding-bottom: 2rem;
+}
+
+/* Login Form */
+.square{
+position: relative;
+width: 500px;
+height: 500px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.square i{
+    position: absolute;
+    inset: 0;
+    border: 2px solid #fff;
+    transition:0.5s;
+}
+.square i:nth-child(1){
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    animation: animate 6s linear infinite;
+}
+.square i:nth-child(2){
+    border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+    animation: animate 4s linear infinite;
+}
+.square i:nth-child(3){
+    border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+    animation: animate2 10s linear infinite;
+}
+.square:hover i{
+border: 6px solid var(--clr);
+}
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes animate2 {
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    } 
+}
+.login1{
+position: relative;
+width: 330px;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 20px;
+}
+.login1 h2{
+    font-size: 2em;
+    color: #fff;
+}
+.login1 .inputbox{
+    position: relative;
+    width: 100%;
+}
+.login1 .inputbox input{
+    position: relative;
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    font-size: 1.2em;
+    color: #fff;
+    box-shadow: none;
+    outline: none;
+
+
+}
+.login1 .inputbox input[type="submit"]{
+    width: 100%;
+    background: linear-gradient(45deg,#ff357a,#fff172);
+    border: none;
+    cursor: pointer;
+}
+.login1 .inputbox input[type="submit"]:hover{
+    transition: opacity 0.5s linear;
+    /* opacity: 0; */
+}
+.login1 .links{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.login1 .links a{
+    columns: #fff;
+    text-decoration: none;
+}
+
+/* End */
